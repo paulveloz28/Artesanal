@@ -4,21 +4,23 @@ public class Maquina {
 
 	private String nombreCerveza;
 	private String descripcion;
+	private String codigo;
 	private double precioPorMl;
 	private double capacidadMaxima;
 	private double cantidadActual;
 
-	public Maquina(String nombreCerveza, String descripcion, double precioPorMl, double capacidadMaxima) {
+	public Maquina(String nombreCerveza, String descripcion,String codigo, double precioPorMl, double capacidadMaxima) {
 
 		this.nombreCerveza = nombreCerveza;
 		this.descripcion = descripcion;
+		this.codigo = codigo;
 		this.precioPorMl = precioPorMl;
 		this.capacidadMaxima = capacidadMaxima;
 		this.cantidadActual = 0;
 
 	}
 
-	public Maquina(String nombreCerveza, String descripcion, double precioPorMl) {
+	public Maquina(String nombreCerveza, String descripcion, String codigo, double precioPorMl) {
 
 		this.nombreCerveza = nombreCerveza;
 		this.descripcion = descripcion;
@@ -43,6 +45,10 @@ public class Maquina {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+	
+	public String getCodigo() {
+		return codigo;
+	}
 
 	public double getPrecioPorMl() {
 		return precioPorMl;
@@ -63,18 +69,18 @@ public class Maquina {
 	public void imprimir() {
 		String mensaje;
 
-		mensaje = "Nombre cerveza: " + nombreCerveza + " , Descripcion: " + descripcion + " , Precio por Ml: "
+		mensaje = "Nombre cerveza: " + nombreCerveza + " , Descripcion: " + descripcion + " , Codigo: " + codigo + " , Precio por Ml: "
 				+ precioPorMl + " , Capacidad Máxima: " + capacidadMaxima + " , Cantidad Actual: " + cantidadActual;
 		System.out.println(mensaje);
 	}
 
 	public void llenarMaquina() {
-		this.cantidadActual = this.capacidadMaxima - 100;
+		this.cantidadActual = this.capacidadMaxima - 200;
 	}
 
 	public boolean recargarCerveza(double cantidad) {
 		double limitePermitido;
-		limitePermitido = capacidadMaxima - 100;
+		limitePermitido = capacidadMaxima - 200;
 
 		if (cantidadActual + cantidad <= limitePermitido) {
 			cantidadActual = cantidadActual + cantidad;

@@ -1,10 +1,8 @@
 package com.krakedev.artesanal.testJUnit;
 
 import org.junit.jupiter.api.Test;
-
 import com.krakedev.artesanal.Maquina;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestServirCervezaAI {
 
@@ -13,7 +11,7 @@ public class TestServirCervezaAI {
 
 		// Valida que, cuando hay suficiente cerveza, se descuente
 		// la cantidad solicitada y se retorne el valor a pagar.
-		Maquina maquina = new Maquina("Pilsener", "Cerveza artesanal", 0.05, 5000);
+		Maquina maquina = new Maquina("Pilsener", "Cerveza artesanal", "M001", 0.05, 5000);
 
 		maquina.llenarMaquina();
 
@@ -33,7 +31,7 @@ public class TestServirCervezaAI {
 
 		// Valida que se pueda servir exactamente toda la cerveza disponible,
 		// dejando la cantidad actual en cero y retornando el valor correcto.
-		Maquina maquina = new Maquina("Club", "Cerveza artesanal", 0.04, 5000);
+		Maquina maquina = new Maquina("Club", "Cerveza artesanal", "M002", 0.04, 5000);
 
 		maquina.llenarMaquina();
 
@@ -52,7 +50,7 @@ public class TestServirCervezaAI {
 
 		// Valida que, cuando se solicita más cerveza de la disponible,
 		// no se sirva nada, se retorne cero y la cantidad actual no cambie.
-		Maquina maquina = new Maquina("Pilsener", "Cerveza artesanal", 0.05, 5000);
+		Maquina maquina = new Maquina("Pilsener", "Cerveza artesanal", "M003", 0.05, 5000);
 
 		maquina.llenarMaquina();
 
@@ -69,7 +67,7 @@ public class TestServirCervezaAI {
 
 		// Valida el comportamiento usando el segundo constructor,
 		// que establece una capacidad máxima de 10000 ml.
-		Maquina maquina = new Maquina("Stout", "Cerveza oscura", 0.03);
+		Maquina maquina = new Maquina("Stout", "Cerveza oscura", "M004", 0.03);
 
 		maquina.llenarMaquina();
 
@@ -89,7 +87,7 @@ public class TestServirCervezaAI {
 
 		// Valida que, cuando la máquina no tiene cerveza disponible,
 		// no se sirva nada, la cantidad permanezca en cero y se retorne cero.
-		Maquina maquina = new Maquina("IPA", "Cerveza artesanal", 0.06);
+		Maquina maquina = new Maquina("IPA", "Cerveza artesanal", "M005", 0.06);
 
 		double valor = maquina.servirCerveza(500);
 
